@@ -6,6 +6,11 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+
+    forecastKeys: {
+      apikey: "8b998d2998299c74dac89a3e4d264972"
+    },
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -16,13 +21,17 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+      //parse keys
+      applicationId: 'SjkY6GSUQfAhwyMrzJxpbEGtdk9SLuYI549Jq05t',
+      restApiId: 'bOilP84PiqPuMQvIJgAeEJ7QYrD2g8mNsVBtZPoP'
     },
 
     contentSecurityPolicy: {
+      'connect-src': "'self' https://api.forecast.io",
       'default-src': "'none'",
-      'script-src': "'self'",
+      'script-src': "'self' https://api.forecast.io",
       'font-src': "'self' fonts.gstatic.com",
-      'connect-src': "'self'",
+      'connect-src': "'self' api/parse.com https://api.forecast.io",
       'img-src': "'self'",
       'style-src': "'self' 'unsafe-inline' fonts.googleapis.com",
       'media-src': "'self'"
